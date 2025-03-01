@@ -1,10 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 
-Route::view("/", "login");
+Route::get('/login', function () {
+    return view('login');
+});
+
+
+Route::post('/login', [UserController::class, 'login']);
+Route::get('/', [ProductController::class, 'index']);
+
+use Illuminate\Support\Facades\Session;
+
+Route::get('/test-session', function () {
+    Session::put('key', 'value');
+    return session('key'); // Yeh "value" return karega agar session set ho raha hai
+});
