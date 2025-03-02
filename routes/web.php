@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 
@@ -10,12 +11,15 @@ Route::get('/login', function () {
 });
 
 
+Route::get('/logout', function () {
+    Session::forget('user');
+    return redirect('login');
+});
+
+
 Route::post('/login', [UserController::class, 'login']);
 Route::get('/', [ProductController::class, 'index']);
 
-use Illuminate\Support\Facades\Session;
-
-Route::get('/test-session', function () {
-    Session::put('key', 'value');
-    return session('key'); // Yeh "value" return karega agar session set ho raha hai
-});
+Route::get('detail/{id}', [ProductController::class, 'detail']);
+Route::get('search', [ProductController::class, 'search']);
+Route::post('add_to_cart', [ProductController::class, 'addToCart']);
