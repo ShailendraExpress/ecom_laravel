@@ -11,7 +11,7 @@ if (Session::has('user')) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official E-Commerce Header</title>
+    <title>E-Comm Company</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@ if (Session::has('user')) {
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container-fluid px-4">
             <!-- 🔹 Brand Logo -->
-            <a class="navbar-brand fw-bold text-primary" href="/">E-Comm Project</a>
+            <a class="navbar-brand fw-bold text-primary" href="/">E-Comm Company</a>
 
             <!-- 🔹 Mobile Menu Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -35,26 +35,13 @@ if (Session::has('user')) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link fw-semibold" href="#">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fw-semibold" href="#" id="categoriesDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Categories
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                            <li><a class="dropdown-item" href="#">Electronics</a></li>
-                            <li><a class="dropdown-item" href="#">Fashion</a></li>
-                            <li><a class="dropdown-item" href="#">Home & Kitchen</a></li>
-                            <li><a class="dropdown-item" href="#">Beauty & Health</a></li>
-                        </ul>
+                        <a class="nav-link fw-semibold" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-semibold" href="#">Deals</a>
+                        <a class="nav-link fw-semibold" href="/myorders">My Orders</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-semibold" href="#">Support</a>
-                    </li>
+
+
                 </ul>
 
                 <!-- 🔹 Search Bar -->
@@ -65,7 +52,7 @@ if (Session::has('user')) {
                 </form>
 
                 <!-- 🔹 Cart Button -->
-                <a href="#" class="btn btn-outline-dark position-relative ms-3">
+                <a href="/cartlist" class="btn btn-outline-dark position-relative ms-3">
                     🛒 Cart
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {{ $totalCartItems }}
